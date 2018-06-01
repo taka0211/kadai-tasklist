@@ -8,14 +8,23 @@
 
     {!! Form::model($tasklist, ['route' => 'tasklists.store']) !!}
 
-        {!! Form::label('status', 'ステータス:') !!}
-        {!! Form::text('status') !!}
+            {!! Form::model($tasklist, ['route' => 'tasklists.store']) !!}
+            
+            <div class="form-group">
+                {!! Form::label('ststus', 'ステータス:') !!}
+                {!! Form::text('status', null, ['class' => 'form-control']) !!}
+            </div>
+                    
+            <div class="form-group">
+                {!! Form::label('content', 'タスク:') !!}
+                {!! Form::text('content', null, ['class' => 'form-control']) !!}
+            </div>
+                
+            {!! Form::submit('投稿', ['class' => 'btn btn-primary']) !!}
         
-        {!! Form::label('content', 'タスク:') !!}
-        {!! Form::text('content') !!}
+            {!! Form::close() !!}
 
-        {!! Form::submit('投稿') !!}
-
+        
     {!! Form::close() !!}
 
 @endsection
